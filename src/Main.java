@@ -1,5 +1,44 @@
+import java.util.*;
+
 public class Main {
+    public static final List<Integer> nums = new ArrayList<>(List.of(1, 2, 3, 5, 2, 4, 4, 7, 8));
+
+    public static final List<String> words = new ArrayList<>(List.of("abc", "bac", "abc", "cba", "bac", "cab"));
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        task4();
+    }
+
+    public static void task1() {
+        for (int num : nums) {
+            if (num % 2 != 0) {
+                System.out.println(num);
+            }
+        }
+    }
+
+    public static void task2() {
+        Collections.sort(nums);
+        int prevNum = Integer.MAX_VALUE;
+
+        for (int num : nums) {
+            if (num % 2 == 0 && num != prevNum) {
+                System.out.println(num);
+                prevNum = num;
+
+
+            }
+        }
+    }
+    public static void task3() {
+
+        Set<String> uniqueWords = new HashSet<>(words);
+        System.out.println(uniqueWords);
+
+    }
+
+    public static void task4() {
+
+        Set<String> uniqueWords = new HashSet<>(words);
+        System.out.println(words.size() - uniqueWords.size());
     }
 }
